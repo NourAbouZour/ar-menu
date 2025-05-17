@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AR Menu Prototype</title>
+    <!-- A-Frame & AR.js -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin:0; overflow:hidden;">
+    <a-scene
+      embedded
+      vr-mode-ui="enabled: false"
+      arjs="trackingMethod: best; sourceType: webcam;"
+    >
+      <!-- 1) Burger target -->
+      <a-nft
+        type="nft"
+        url="assets/burger"
+        smooth="true" smoothCount="10"
+      >
+        <a-plane
+          src="#burger-img"
+          height="1"
+          width="1"
+          rotation="-90 0 0"
+          position="0 0 0"
+        ></a-plane>
+      </a-nft>
+
+      <!-- 2) Fries target -->
+      <a-nft
+        type="nft"
+        url="assets/fries"
+        smooth="true" smoothCount="10"
+      >
+        <a-plane
+          src="#fries-img"
+          height="1"
+          width="1"
+          rotation="-90 0 0"
+          position="0 0 0"
+        ></a-plane>
+      </a-nft>
+
+      <!-- Preload textures -->
+      <a-assets>
+        <img id="burger-img" src="assets/burger.png">
+        <img id="fries-img"  src="assets/fries.png">
+      </a-assets>
+
+      <a-camera-static/>
+    </a-scene>
+  </body>
+</html>
